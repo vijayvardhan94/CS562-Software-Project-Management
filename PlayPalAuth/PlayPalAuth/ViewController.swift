@@ -30,9 +30,24 @@ class ViewController: UIViewController {
         authUI?.delegate = self
         
         //get a reference to the auth ui view controller
+        let authViewController = authUI!.authViewController()
         
         //show it
+        present(authViewController, animated: true, completion:nil)
     }
     
+}
+
+extension ViewController: FUIAuthDelegate{
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        
+        if error != nil{
+            //log error
+            return
+        }
+        //authDataResult?.user.uid
+        
+        performSegue(withIdentifier: "goHome", sender: self)
+    }
 }
 
