@@ -7,47 +7,71 @@
 //
 
 import UIKit
-import FirebaseUI
+import Firebase
 
 class ViewController: UIViewController {
+    
+    //Outlets
+    
+    @IBOutlet weak var emailOu: UITextField!
+    @IBOutlet weak var passwordOu: UITextField!
+    
+    //Variables
+    
+    
+    //Constants
+    let userDefault = UserDefaults.standard
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-    @IBAction func loginTapped(_ sender: UIButton) {
-        
-        //get the default auth ui object
-        let authUI = FUIAuth.defaultAuthUI()
-        guard  authUI != nil else {
-            //log the error
-            return
-            
+        // Do any additional setup after loading the view, typically from a nib.
+    override func viewDidAppear(_ animated: Bool) {
+        if userDefault.bool(forKey: "usersignedin"){
+           performSegue(withIdentifier: "Segue_To_SignIn", sender: self)
         }
-        
-        //set ourselves as the delegate
-        authUI?.delegate = self
-        
-        //get a reference to the auth ui view controller
-        let authViewController = authUI!.authViewController()
-        
-        //show it
-        present(authViewController, animated: true, completion:nil)
     }
     
-}
-
-extension ViewController: FUIAuthDelegate{
-    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
-        
-        if error != nil{
-            //log error
-            return
+    func createUser(email: String, password: String) {
+        Auth.auth().createUser(withEmail: email, password: password){(result, error) in
+            if error == nil{
+                //User created
+                print("User Created")
+                //Sign In User
+                
+            }else{
+                print(error?.localizedDescription)
+            }
+            
         }
-        //authDataResult?.user.uid
+    }
+    
+    func signInUser(email: String, password:String){
+        Auth.auth().createUser(withEmail: email, password: password){ (user, error)
+            in
+            if error == nil {
+                //signed in
+                print("User Signed in")
+                self.userDefault.set(true, forKey: "usersignedin")
+                self.userDefault.synchronize()
+                self.performSegue(withIdentifier: "Segue_To_SignIn", sender: self)
+            }else if error?._code == AuthErrorCode.userNotFound.rawValue{
+                self.createUser(email: email, password: password)
+            }else{
+                print(error)
+                print(error?.localizedDescription)
+            }
+        }
+    }
         
-        performSegue(withIdentifier: "goHome", sender: self)
+    
+    //actions
+
+    @IBAction func signInBtnPressed(_ sender: Any) {
+        
+        signInUser(email: emailOu.text!, password: passwordOu.text!)
+        
     }
 }
-

@@ -1,0 +1,6 @@
+framework module Pods_C2562_Firebase {
+  umbrella header "Pods-C2562-Firebase-umbrella.h"
+
+  export *
+  module * { export * }
+}

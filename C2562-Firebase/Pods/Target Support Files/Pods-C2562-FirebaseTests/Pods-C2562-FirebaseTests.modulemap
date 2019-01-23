@@ -1,0 +1,6 @@
+framework module Pods_C2562_FirebaseTests {
+  umbrella header "Pods-C2562-FirebaseTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
