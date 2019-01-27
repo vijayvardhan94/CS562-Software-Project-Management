@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8778082E4DBB96DB57AC72422FFFADCA"
+               BlueprintIdentifier = "F9E0A18C1A3359C29EABD8918AFE35BF"
                BuildableName = "Pods_PlayPalAuth.framework"
                BlueprintName = "Pods-PlayPalAuth"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8778082E4DBB96DB57AC72422FFFADCA"
+            BlueprintIdentifier = "F9E0A18C1A3359C29EABD8918AFE35BF"
             BuildableName = "Pods_PlayPalAuth.framework"
             BlueprintName = "Pods-PlayPalAuth"
             ReferencedContainer = "container:Pods.xcodeproj">

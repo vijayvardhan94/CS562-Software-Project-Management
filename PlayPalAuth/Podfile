@@ -9,6 +9,7 @@ target 'PlayPalAuth' do
 
   pod 'Firebase/Core'
   pod 'FirebaseUI/Auth'
+  pod 'GoogleSignIn'
 
 
   target 'PlayPalAuthTests' do
