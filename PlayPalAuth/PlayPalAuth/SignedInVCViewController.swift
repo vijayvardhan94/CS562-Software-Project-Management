@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class SignedInVCViewController: UIViewController {
     
@@ -35,6 +36,7 @@ class SignedInVCViewController: UIViewController {
     @IBAction func signOutPressed(_ sender: Any) {
         do {
             try Auth.auth().signOut()
+            try GIDSignIn.sharedInstance()?.signOut()
             userDefault.removeObject(forKey: "usersignedin")
             userDefault.synchronize()
             self.dismiss(animated: true, completion: nil)
