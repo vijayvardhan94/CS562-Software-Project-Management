@@ -24,6 +24,7 @@ class SignedInVCViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("this view is loaded")
         
         guard let email = Auth.auth().currentUser?.email else{ return }
         emailOu.text = email + ", Welcome to PlayPal!"
@@ -46,5 +47,9 @@ class SignedInVCViewController: UIViewController {
         }
     }
     
+    @IBAction func EnterPreferencesPressed(_ sender: Any) {
+        print("button pressed1")
+        self.performSegue(withIdentifier: "Segue_Sports_Calendar", sender: self)
+    }
     
 }
