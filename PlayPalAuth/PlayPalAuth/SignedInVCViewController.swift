@@ -27,6 +27,7 @@ class SignedInVCViewController: UIViewController {
         
         guard let email = Auth.auth().currentUser?.email else{ return }
         emailOu.text = email + ", Welcome to PlayPal!"
+        
     }
         // Do any additional setup after loading the view.
     

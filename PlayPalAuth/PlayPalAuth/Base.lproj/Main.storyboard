@@ -81,13 +81,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VD-WR-ERN">
-                                <rect key="frame" x="186.66666666666666" y="437.66666666666669" width="41" height="21"/>
+                                <rect key="frame" x="186.66666666666666" y="438" width="41" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwC-p5-Qb9">
-                                <rect key="frame" x="177" y="533.66666666666663" width="60" height="133.33333333333337"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwC-p5-Qb9">
+                                <rect key="frame" x="177" y="558" width="60" height="109"/>
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
                                     <action selector="signOutPressed:" destination="fTU-Ss-GDK" eventType="touchUpInside" id="tn3-OY-3bi"/>
@@ -97,6 +97,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XwC-p5-Qb9" firstAttribute="top" secondItem="5VD-WR-ERN" secondAttribute="bottom" constant="75" id="3PC-fo-7yl"/>
+                            <constraint firstItem="5VD-WR-ERN" firstAttribute="centerX" secondItem="31d-6s-NAm" secondAttribute="centerX" id="AqU-lU-cbs"/>
                             <constraint firstItem="XwC-p5-Qb9" firstAttribute="centerX" secondItem="31d-6s-NAm" secondAttribute="centerX" id="CMd-fX-k3b"/>
                             <constraint firstItem="5VD-WR-ERN" firstAttribute="centerX" secondItem="31d-6s-NAm" secondAttribute="centerX" id="NbM-WK-oBz"/>
                             <constraint firstItem="5VD-WR-ERN" firstAttribute="centerY" secondItem="31d-6s-NAm" secondAttribute="centerY" id="ZAA-kc-jE7"/>
