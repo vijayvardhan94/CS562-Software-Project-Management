@@ -10,7 +10,7 @@ import UIKit
 
 class SportsSchedule: UIViewController {
 //outlets
-    let sportslist:NSArray = ["Raquetball", "Squash", "Badminton", "Basketball", "Table Tennis", "Swimming"]
+    let sportslist:NSArray = ["Raquetball", "Squash", "Badminton", "Basketball", "Table Tennis"]
     let myTeXtField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .white
@@ -22,6 +22,8 @@ class SportsSchedule: UIViewController {
 //connstants
     
 //variables
+    let multiplePicker = MultiplePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
@@ -49,14 +51,14 @@ class SportsSchedule: UIViewController {
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         
         myTeXtField.inputAccessoryView = toolBar
-        MultiplePicker.menuOptions = sportslist as! [String]
-        MultiplePicker.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 300)
-        myTeXtField.inputView = MultiplePicker
+        multiplePicker.menuOptions = sportslist as! [String]
+        multiplePicker.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 300)
+        myTeXtField.inputView = multiplePicker
         
     }
-    
+
     @objc func donePicker(){
-        myTeXtField.text  = MultiplePicker.str
+        myTeXtField.text  = multiplePicker.str
         myTeXtField.resignFirstResponder()
         
     }
@@ -78,33 +80,26 @@ class MultiplePicker:UIView, UITableViewDelegate, UITableViewDataSource{
     var str:String! = ""
     var tableView = UITableView()
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame:frame)
         setupTableView()
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-   
-    
-     func setupTableView(){
+    func setupTableView(){
         self.addSubview(tableView)
-        tableView.backgroundColor = .darkGray
+        tableView.backgroundColor = .lightGray
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        tableView.rightAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        tableView.leftAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
     }
+    
+   
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -119,6 +114,7 @@ class MultiplePicker:UIView, UITableViewDelegate, UITableViewDataSource{
         cell.backgroundColor = .darkGray
         cell.selectionStyle = .none
         return cell
+    }
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
          var i = indexPath.item
@@ -127,8 +123,8 @@ class MultiplePicker:UIView, UITableViewDelegate, UITableViewDataSource{
          if !pickedArr.contains(menuOptions[i]){
                 cell?.backgroundColor = .white
                 pickedArr.append(menuOptions[i])
-            }
-            else {
+         }
+         else{
                 cell?.backgroundColor = .clear
                 let index = pickedArr.index(of:menuOptions[i])
                 pickedArr.remove(at:index!)
@@ -136,5 +132,11 @@ class MultiplePicker:UIView, UITableViewDelegate, UITableViewDataSource{
             
             str = pickedArr.joined(separator: ",")
     }
+
+required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
 }
 }
+
+
+
