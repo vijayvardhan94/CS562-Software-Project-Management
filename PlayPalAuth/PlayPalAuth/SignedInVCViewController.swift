@@ -12,9 +12,7 @@ import GoogleSignIn
 
 class SignedInVCViewController: UIViewController {
     
-    
     //outlets
-    
     @IBOutlet weak var emailOu: UILabel!
     
     //variables
@@ -47,9 +45,9 @@ class SignedInVCViewController: UIViewController {
         }
     }
     
-    @IBAction func EnterPreferencesPressed(_ sender: Any) {
-        print("button pressed1")
-        self.performSegue(withIdentifier: "Segue_Sports_Calendar", sender: self)
+    
+    @IBAction func NextButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "Segue_To_Selection", sender: self)
     }
     
 }

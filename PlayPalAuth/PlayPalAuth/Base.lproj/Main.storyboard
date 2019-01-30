@@ -93,14 +93,17 @@
                                     <action selector="signOutPressed:" destination="fTU-Ss-GDK" eventType="touchUpInside" id="tn3-OY-3bi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOd-WS-qID">
-                                <rect key="frame" x="120" y="634" width="165" height="109"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="llU-9F-zKu">
+                                <rect key="frame" x="125" y="735" width="152" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Enter Preferences"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvY-kj-wBh">
+                                <rect key="frame" x="181" y="682" width="41" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="EnterPreferencesPressed:" destination="fTU-Ss-GDK" eventType="touchUpInside" id="vVV-1Q-XI0"/>
-                                    <action selector="signOutPressed:" destination="fTU-Ss-GDK" eventType="touchUpInside" id="kVT-z0-xqf"/>
+                                    <action selector="NextButtonPressed:" destination="fTU-Ss-GDK" eventType="touchUpInside" id="xCX-s3-4i3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -117,63 +120,56 @@
                     </view>
                     <connections>
                         <outlet property="emailOu" destination="5VD-WR-ERN" id="C3Q-BD-Xpz"/>
-                        <segue destination="euC-do-Qlu" kind="show" identifier="Segue_Sports_Calendar" id="Qr6-HZ-Ttr"/>
+                        <segue destination="5i5-wB-bCs" kind="show" identifier="Segue_To_Selection" id="dg4-jA-70Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pL-qj-YUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="937.68115942028987" y="78.348214285714278"/>
         </scene>
-        <!--Multiple Sections View Controller-->
-        <scene sceneID="GYM-aS-K8N">
+        <!--Sports Schedule-->
+        <scene sceneID="FZR-1s-6yL">
             <objects>
-                <viewController id="euC-do-Qlu" customClass="MultipleSectionsViewController" customModule="PlayPalAuth" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hfh-1M-9bv">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qCy-H0-4un" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="5i5-wB-bCs" customClass="SportsSchedule" customModule="PlayPalAuth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bto-cV-Fg0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bn0-rB-Pl9">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EF-XO-bnK">
                                 <rect key="frame" x="0.0" y="44" width="414" height="75"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oa4-8b-hEq">
-                                        <rect key="frame" x="11" y="12.666666666666664" width="45" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbb-JZ-ot2">
+                                        <rect key="frame" x="8" y="20" width="52" height="38"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="KEL-4A-pbq"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="cV0-TO-PCU"/>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="45" id="d3c-WD-45E"/>
-                                            <constraint firstAttribute="height" constant="50" id="ldX-mR-5nY"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="wfG-iV-P87"/>
-                                            <constraint firstAttribute="width" constant="45" id="xZF-4p-1cf"/>
+                                            <constraint firstAttribute="height" constant="50" id="JV8-Up-md3"/>
+                                            <constraint firstAttribute="width" constant="45" id="Ozs-Ue-otX"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Back">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Back"/>
                                         <connections>
-                                            <action selector="backButtonPressed:" destination="euC-do-Qlu" eventType="touchUpInside" id="pGE-s9-gB7"/>
+                                            <action selector="backButtonPressed:" destination="5i5-wB-bCs" eventType="touchUpInside" id="JHI-Wl-CVs"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="oa4-8b-hEq" firstAttribute="centerY" secondItem="Bn0-rB-Pl9" secondAttribute="centerY" id="OWJ-5R-i2d"/>
-                                    <constraint firstAttribute="height" constant="75" id="uFw-Zd-dnX"/>
-                                    <constraint firstItem="oa4-8b-hEq" firstAttribute="leading" secondItem="Bn0-rB-Pl9" secondAttribute="leading" constant="11" id="yuu-3Z-kBh"/>
+                                    <constraint firstItem="tbb-JZ-ot2" firstAttribute="leading" secondItem="4EF-XO-bnK" secondAttribute="leading" constant="8" id="S8y-zl-Kqn"/>
+                                    <constraint firstAttribute="height" constant="75" id="vQq-7Q-Xz1"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Bn0-rB-Pl9" firstAttribute="top" secondItem="KG4-Ep-XjU" secondAttribute="top" id="IEs-C4-xam"/>
-                            <constraint firstItem="Bn0-rB-Pl9" firstAttribute="leading" secondItem="KG4-Ep-XjU" secondAttribute="leading" id="QzC-hO-YYO"/>
-                            <constraint firstItem="KG4-Ep-XjU" firstAttribute="trailing" secondItem="Bn0-rB-Pl9" secondAttribute="trailing" id="peM-XT-svi"/>
+                            <constraint firstItem="4EF-XO-bnK" firstAttribute="top" secondItem="Gbt-4W-iKe" secondAttribute="top" id="ZMO-O8-qHO"/>
+                            <constraint firstItem="4EF-XO-bnK" firstAttribute="leading" secondItem="Gbt-4W-iKe" secondAttribute="leading" id="lg9-MK-OcW"/>
+                            <constraint firstItem="4EF-XO-bnK" firstAttribute="trailing" secondItem="Gbt-4W-iKe" secondAttribute="trailing" id="s2f-n0-ox0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="KG4-Ep-XjU"/>
+                        <viewLayoutGuide key="safeArea" id="Gbt-4W-iKe"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7cO-05-Wwn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750" y="78"/>
+            <point key="canvasLocation" x="1828.985507246377" y="77.678571428571431"/>
         </scene>
     </scenes>
 </document>
