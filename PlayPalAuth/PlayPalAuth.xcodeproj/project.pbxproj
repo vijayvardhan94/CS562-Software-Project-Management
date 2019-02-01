@@ -17,6 +17,7 @@
 		5A0F859F21EE9135008BADF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F859E21EE9135008BADF6 /* GoogleService-Info.plist */; };
 		5A0F85A021EE9135008BADF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F859E21EE9135008BADF6 /* GoogleService-Info.plist */; };
 		5A3069A721F6B2C100352AA8 /* SignedInVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3069A621F6B2C100352AA8 /* SignedInVCViewController.swift */; };
+		5A822E462203DB7100F32BD0 /* 1057813d005a17f copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A822E452203DB7100F32BD0 /* 1057813d005a17f copy.png */; };
 		5AE2A28822011D3300A82C0E /* SportsSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2A28722011D3300A82C0E /* SportsSchedule.swift */; };
 		8BB581668B2EECDCFA80694B /* Pods_PlayPalAuthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95725995D2C9D0EBCBE39581 /* Pods_PlayPalAuthTests.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		5A0F859521EE902D008BADF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A0F859E21EE9135008BADF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A3069A621F6B2C100352AA8 /* SignedInVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInVCViewController.swift; sourceTree = "<group>"; };
+		5A822E452203DB7100F32BD0 /* 1057813d005a17f copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1057813d005a17f copy.png"; sourceTree = "<group>"; };
 		5AE2A28722011D3300A82C0E /* SportsSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsSchedule.swift; sourceTree = "<group>"; };
 		7DB812C2346684140F9806FE /* Pods-PlayPalAuthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayPalAuthTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayPalAuthTests/Pods-PlayPalAuthTests.debug.xcconfig"; sourceTree = "<group>"; };
 		95725995D2C9D0EBCBE39581 /* Pods_PlayPalAuthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayPalAuthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				5A0F857D21EE902B008BADF6 /* PlayPalAuth */,
+				5A822E422203D94100F32BD0 /* Images */,
 				5A0F859221EE902D008BADF6 /* PlayPalAuthTests */,
 				5A0F857C21EE902B008BADF6 /* Products */,
 				09DEFFD5F829B3F381853E77 /* Pods */,
@@ -127,6 +130,14 @@
 				5A0F859521EE902D008BADF6 /* Info.plist */,
 			);
 			path = PlayPalAuthTests;
+			sourceTree = "<group>";
+		};
+		5A822E422203D94100F32BD0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5A822E452203DB7100F32BD0 /* 1057813d005a17f copy.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		A6487CCDED8D091E442E9350 /* Frameworks */ = {
@@ -226,6 +237,7 @@
 				5A0F858921EE902D008BADF6 /* LaunchScreen.storyboard in Resources */,
 				5A0F859F21EE9135008BADF6 /* GoogleService-Info.plist in Resources */,
 				5A0F858621EE902D008BADF6 /* Assets.xcassets in Resources */,
+				5A822E462203DB7100F32BD0 /* 1057813d005a17f copy.png in Resources */,
 				5A0F858421EE902B008BADF6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

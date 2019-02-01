@@ -29,13 +29,16 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.gray
+        
+        
         GIDSignIn.sharedInstance()?.uiDelegate = self
         
     }
         // Do any additional setup after loading the view, typically from a nib.
     override func viewDidAppear(_ animated: Bool) {
         if userDefault.bool(forKey: "usersignedin"){
-           performSegue(withIdentifier: "Segue_To_SignIn", sender: self)
+           performSegue(withIdentifier: "Segue_To_Select_Sport", sender: self)
         }
     }
     
@@ -61,7 +64,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
                 print("User Signed in")
                 self.userDefault.set(true, forKey: "usersignedin")
                 self.userDefault.synchronize()
-                self.performSegue(withIdentifier: "Segue_To_SignIn", sender: self)
+                self.performSegue(withIdentifier: "Segue_To_Select_Sport", sender: self)
             }else if error?._code == AuthErrorCode.userNotFound.rawValue{
                 self.createUser(email: email, password: password)
             }else{

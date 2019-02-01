@@ -22,7 +22,7 @@ class SignedInVCViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("this view is loaded")
+        print("this view is loaded now")
         
         guard let email = Auth.auth().currentUser?.email else{ return }
         emailOu.text = email + ", Welcome to PlayPal!"
@@ -45,9 +45,8 @@ class SignedInVCViewController: UIViewController {
         }
     }
     
+
     
-    @IBAction func NextButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "Segue_To_Selection", sender: self)
-    }
+    
     
 }

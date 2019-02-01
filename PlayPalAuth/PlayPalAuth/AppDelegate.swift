@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 if error == nil {
                     self.userDefault.set(true, forKey: "usersignedIn")
                     self.userDefault.synchronize()
-                    self.window?.rootViewController?.performSegue(withIdentifier: "Segue_To_SignIn", sender: nil)
+                    self.window?.rootViewController?.performSegue(withIdentifier: "Segue_To_Select_Sport", sender: nil)
                 } else {
                     print(error?.localizedDescription)
                 }
