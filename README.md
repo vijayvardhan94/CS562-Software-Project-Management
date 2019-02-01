@@ -9,6 +9,6 @@ Requirements: XCode Version 10.1, OS X 10.8+ required to run built app
     `https://github.com/vijayvardhan94/CS562-Software-Project-Management.git`
 2. Run `pod install` (requires [Cocoapods](http://cocoapods.org)).
 3. After cloning to your local system, navigate to the folder `PlayPalAuth`.
-4. Open `PlayPalAuth.xcworkspace` and then run it.
+4. Open `PlayPalAuth.xcworkspace` and then run it by choosing your choice of simulator.
 
 
