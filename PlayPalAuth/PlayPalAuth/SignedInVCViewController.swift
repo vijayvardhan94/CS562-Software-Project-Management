@@ -15,19 +15,21 @@ class SignedInVCViewController: UIViewController {
     //outlets
     @IBOutlet weak var emailOu: UILabel!
     
-    //variables
     
+//variables
     //constants
     let userDefault = UserDefaults.standard
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("this view is loaded now")
+        self.view.backgroundColor = UIColor.gray
         
         guard let email = Auth.auth().currentUser?.email else{ return }
-        emailOu.text = email + ", Welcome to PlayPal!"
+        emailOu.text = email + ", Welcome!"
         
-    }
+}
         // Do any additional setup after loading the view.
     
     
@@ -44,9 +46,5 @@ class SignedInVCViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-    
-
-    
-    
     
 }

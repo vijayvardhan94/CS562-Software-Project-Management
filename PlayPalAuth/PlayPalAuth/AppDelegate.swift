@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 if error == nil {
                     self.userDefault.set(true, forKey: "usersignedIn")
                     self.userDefault.synchronize()
-                    self.window?.rootViewController?.performSegue(withIdentifier: "Segue_To_Select_Sport", sender: nil)
+                    self.window?.rootViewController?.performSegue(withIdentifier: "Segue_To_Welcome", sender: nil)
                 } else {
                     print(error?.localizedDescription)
                 }
@@ -55,8 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url,
-                                                 sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                                                  annotation: [:])
         
     }

@@ -76,7 +76,7 @@
                     <connections>
                         <outlet property="emailOu" destination="5Ih-5v-UXx" id="gJb-jr-0Ka"/>
                         <outlet property="passwordOu" destination="HuI-9h-pGv" id="yOX-Rb-FGp"/>
-                        <segue destination="5i5-wB-bCs" kind="show" identifier="Segue_To_Select_Sport" id="3EB-mc-0Vy"/>
+                        <segue destination="fTU-Ss-GDK" kind="show" identifier="Segue_To_Welcome" id="Vyx-s0-pPg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -91,36 +91,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VD-WR-ERN">
-                                <rect key="frame" x="186.66666666666666" y="438" width="41" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VD-WR-ERN">
+                                <rect key="frame" x="20" y="86" width="59" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="llU-9F-zKu">
+                                <rect key="frame" x="125" y="735" width="152" height="35"/>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwC-p5-Qb9">
-                                <rect key="frame" x="177" y="558" width="60" height="109"/>
+                                <rect key="frame" x="334" y="42" width="60" height="109"/>
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
                                     <action selector="signOutPressed:" destination="fTU-Ss-GDK" eventType="touchUpInside" id="tn3-OY-3bi"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="llU-9F-zKu">
-                                <rect key="frame" x="125" y="735" width="152" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your favourite sports below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSs-Bt-XVP">
+                                <rect key="frame" x="77" y="130" width="261" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KCh-eP-NQG">
+                                <rect key="frame" x="334" y="193" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JqY-Ik-k5L">
+                                <rect key="frame" x="334" y="193" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="SelectRacketBallChanged:" destination="fTU-Ss-GDK" eventType="valueChanged" id="4f8-X6-fNc"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PNp-vw-tCa">
+                                <rect key="frame" x="334" y="241" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="SelectBasketBallChanged:" destination="fTU-Ss-GDK" eventType="valueChanged" id="lYA-dQ-jKo"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RacketBall" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1e-u0-99S">
+                                <rect key="frame" x="77" y="198" width="80" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Basket Ball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMr-DH-xej">
+                                <rect key="frame" x="77" y="246" width="84" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XwC-p5-Qb9" firstAttribute="top" secondItem="5VD-WR-ERN" secondAttribute="bottom" constant="75" id="3PC-fo-7yl"/>
+                            <constraint firstItem="5VD-WR-ERN" firstAttribute="leading" secondItem="WdU-Bx-CFd" secondAttribute="leading" constant="20" id="4Fz-1U-7iX"/>
+                            <constraint firstItem="rSs-Bt-XVP" firstAttribute="top" secondItem="WdU-Bx-CFd" secondAttribute="top" constant="86" id="5gu-Mk-dpK"/>
+                            <constraint firstItem="WdU-Bx-CFd" firstAttribute="trailing" secondItem="XwC-p5-Qb9" secondAttribute="trailing" constant="2" id="9Ry-Ti-8Il"/>
                             <constraint firstItem="5VD-WR-ERN" firstAttribute="centerX" secondItem="31d-6s-NAm" secondAttribute="centerX" id="AqU-lU-cbs"/>
+                            <constraint firstItem="5VD-WR-ERN" firstAttribute="centerY" secondItem="31d-6s-NAm" secondAttribute="centerY" id="Ar8-hi-9pd"/>
                             <constraint firstItem="XwC-p5-Qb9" firstAttribute="centerX" secondItem="31d-6s-NAm" secondAttribute="centerX" id="CMd-fX-k3b"/>
+                            <constraint firstItem="XwC-p5-Qb9" firstAttribute="top" secondItem="31d-6s-NAm" secondAttribute="top" constant="42" id="My6-df-tlt"/>
                             <constraint firstItem="5VD-WR-ERN" firstAttribute="centerX" secondItem="31d-6s-NAm" secondAttribute="centerX" id="NbM-WK-oBz"/>
+                            <constraint firstItem="5VD-WR-ERN" firstAttribute="leading" secondItem="WdU-Bx-CFd" secondAttribute="leading" constant="20" id="PtW-w4-ajd"/>
+                            <constraint firstItem="5VD-WR-ERN" firstAttribute="centerX" secondItem="31d-6s-NAm" secondAttribute="centerX" id="Rew-0g-3Ic"/>
+                            <constraint firstItem="llU-9F-zKu" firstAttribute="top" secondItem="5VD-WR-ERN" secondAttribute="bottom" constant="628.66999999999996" id="Sgi-lL-5k5"/>
+                            <constraint firstItem="WdU-Bx-CFd" firstAttribute="trailing" secondItem="5VD-WR-ERN" secondAttribute="trailing" constant="20" id="UdQ-Pc-l1G"/>
+                            <constraint firstItem="XwC-p5-Qb9" firstAttribute="leading" secondItem="WdU-Bx-CFd" secondAttribute="leading" constant="334" id="WZ7-XP-dTc"/>
+                            <constraint firstItem="WdU-Bx-CFd" firstAttribute="trailing" secondItem="rSs-Bt-XVP" secondAttribute="trailing" constant="76" id="Ytm-Tu-w2K"/>
                             <constraint firstItem="5VD-WR-ERN" firstAttribute="centerY" secondItem="31d-6s-NAm" secondAttribute="centerY" id="ZAA-kc-jE7"/>
+                            <constraint firstItem="rSs-Bt-XVP" firstAttribute="leading" secondItem="WdU-Bx-CFd" secondAttribute="leading" constant="77" id="Zdf-Ii-Zcb"/>
+                            <constraint firstItem="WdU-Bx-CFd" firstAttribute="trailing" secondItem="XwC-p5-Qb9" secondAttribute="trailing" constant="20" id="bE5-Jp-Zyp"/>
+                            <constraint firstItem="XwC-p5-Qb9" firstAttribute="top" secondItem="31d-6s-NAm" secondAttribute="top" constant="139.30000000000001" id="cb9-dH-4x1"/>
+                            <constraint firstItem="5VD-WR-ERN" firstAttribute="top" secondItem="WdU-Bx-CFd" secondAttribute="top" constant="139.30000000000001" id="dcf-aV-Ffe"/>
+                            <constraint firstItem="WdU-Bx-CFd" firstAttribute="bottom" secondItem="5VD-WR-ERN" secondAttribute="bottom" constant="755.66999999999996" id="jkd-XM-iCJ"/>
+                            <constraint firstItem="llU-9F-zKu" firstAttribute="top" secondItem="rSs-Bt-XVP" secondAttribute="bottom" constant="584" id="oIU-Uh-LH1"/>
+                            <constraint firstItem="WdU-Bx-CFd" firstAttribute="bottom" secondItem="XwC-p5-Qb9" secondAttribute="bottom" constant="711" id="psP-fJ-Qof"/>
+                            <constraint firstItem="5VD-WR-ERN" firstAttribute="top" secondItem="WdU-Bx-CFd" secondAttribute="top" constant="42" id="t00-1t-LEu"/>
                             <constraint firstItem="WdU-Bx-CFd" firstAttribute="bottom" secondItem="XwC-p5-Qb9" secondAttribute="bottom" constant="195" id="wpK-OV-C2E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WdU-Bx-CFd"/>
                     </view>
                     <connections>
+                        <outlet property="SelectBasketBallSwitch" destination="PNp-vw-tCa" id="jJo-Wp-87O"/>
+                        <outlet property="SelectRacketBallSwitch" destination="JqY-Ik-k5L" id="EZg-SE-qhJ"/>
+                        <outlet property="SelectSportSwitch" destination="KCh-eP-NQG" id="MSf-oG-SIe"/>
                         <outlet property="emailOu" destination="5VD-WR-ERN" id="C3Q-BD-Xpz"/>
                     </connections>
                 </viewController>
@@ -146,7 +205,6 @@
                                         <state key="normal" title="Profile"/>
                                         <connections>
                                             <action selector="ProfileButtonPressed:" destination="hL1-aC-H1R" eventType="touchUpInside" id="c4V-rW-FrX"/>
-                                            <segue destination="fTU-Ss-GDK" kind="show" identifier="Segue_To_Profile" id="VKT-s6-57r"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnR-E3-B3K">
